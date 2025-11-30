@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehla2ly | Monochrome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { mono: { black: '#000000', surface: '#111111', border: '#333333', text: '#888888' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .noise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .glass-nav { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .phone-frame { border: 10px solid #1a1a1a; border-radius: 50px; overflow: hidden; position: relative; box-shadow: 0 0 0 2px #333, 0 40px 80px -20px rgba(255, 255, 255, 0.1); width: 300px; height: 610px; margin: auto; z-index: 10; background: #000; }
+        .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 24px; background: #1a1a1a; border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; z-index: 20; }
+        .input-field { background: transparent; border: none; border-bottom: 1px solid #333; color: white; padding: 16px 0; width: 100%; transition: all 0.3s ease; font-weight: 500; }
+        .input-field:focus { outline: none; border-bottom-color: white; }
+        ::selection { background: #FFFFFF; color: #000000; }
+    </style>
+</head>
+<body class="bg-black text-mono-text antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
+
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-2xl font-black text-white tracking-tighter hover:opacity-80 transition">EHLA2LY<span class="text-mono-text">.</span></a>
+            <div class="hidden md:flex gap-10 text-xs font-bold tracking-[0.2em] text-mono-text">
+                <a href="#features" class="hover:text-white transition-colors duration-300">FEATURES</a>
+                <a href="#stats" class="hover:text-white transition-colors duration-300">STATS</a>
+                <a href="privacy.html" class="hover:text-white transition-colors duration-300">PRIVACY</a> <a href="#contact" class="hover:text-white transition-colors duration-300">CONTACT</a>
+            </div>
+            <a href="#download" class="bg-white text-black px-8 py-3 rounded-full font-bold text-xs tracking-widest hover:bg-gray-200 transition transform hover:scale-105">GET APP</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-32 pb-20 relative z-10">
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-up" data-aos-duration="1200">
+                <div class="inline-flex items-center gap-3 mb-8"><div class="h-[1px] w-12 bg-white/30"></div><span class="text-xs font-bold tracking-[0.3em] text-white">PREMIUM GROOMING</span></div>
+                <h1 class="text-6xl lg:text-8xl font-black text-white leading-[0.9] mb-8 tracking-tighter">Book.<br>Look.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-600">Sharp.</span></h1>
+                <p class="text-lg font-light text-gray-400 mb-12 max-w-md leading-relaxed">The minimalist booking platform for the modern gentleman. Find elite barbers and secure your slot in seconds.</p>
+                <div class="flex flex-col sm:flex-row gap-4" id="download">
+                    <button class="group flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                        <i class="fab fa-apple text-2xl"></i>
+                        <div class="text-left leading-tight"><div class="text-[9px] font-bold uppercase tracking-wider opacity-60">Download on</div><div class="text-sm font-black">App Store</div></div>
+                    </button>
+                    <button class="group flex items-center gap-4 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+                        <i class="fab fa-google-play text-xl"></i>
+                        <div class="text-left leading-tight"><div class="text-[9px] font-bold uppercase tracking-wider opacity-60">Get it on</div><div class="text-sm font-black">Google Play</div></div>
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex justify-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1500">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <img src="app_screen.png" alt="App Screen" class="w-full h-full object-cover grayscale contrast-125" onerror="this.style.display='none'; this.parentElement.innerHTML+='<div class=\'flex h-full items-center justify-center bg-neutral-900 text-neutral-600 text-xs font-bold tracking-widest\'>APP SCREENSHOT</div>'">
+                    <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="border-y border-white/10 py-16 bg-mono-surface relative z-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-8 text-center md:text-left">
+            <div data-aos="fade-up" data-aos-delay="0"><div class="text-4xl font-black text-white mb-1">10k+</div><div class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Bookings</div></div>
+            <div class="hidden md:block h-12 w-[1px] bg-white/10"></div>
+            <div data-aos="fade-up" data-aos-delay="100"><div class="text-4xl font-black text-white mb-1">500+</div><div class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Barbers</div></div>
+            <div class="hidden md:block h-12 w-[1px] bg-white/10"></div>
+            <div data-aos="fade-up" data-aos-delay="200"><div class="text-4xl font-black text-white mb-1">4.9</div><div class="text-[10px] font-bold tracking-widest text-gray-500 uppercase">Rating</div></div>
+        </div>
+    </section>
+
+    <section id="features" class="py-32 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+            <div class="p-10 rounded-3xl bg-mono-surface border border-white/5 hover:border-white/20 transition duration-500 group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center mb-8 text-xl group-hover:scale-110 transition"><i class="fas fa-location-dot"></i></div>
+                <h3 class="text-xl font-bold text-white mb-4">Geolocation</h3>
+                <p class="text-sm leading-relaxed">Precision mapping to find the nearest available chair in seconds.</p>
+            </div>
+            <div class="p-10 rounded-3xl bg-mono-surface border border-white/5 hover:border-white/20 transition duration-500 group" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 bg-transparent border border-white text-white rounded-full flex items-center justify-center mb-8 text-xl group-hover:bg-white group-hover:text-black transition"><i class="fas fa-calendar"></i></div>
+                <h3 class="text-xl font-bold text-white mb-4">No Conflicts</h3>
+                <p class="text-sm leading-relaxed">Advanced database locking ensures your time slot is 100% yours.</p>
+            </div>
+            <div class="p-10 rounded-3xl bg-mono-surface border border-white/5 hover:border-white/20 transition duration-500 group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 bg-transparent border border-white/30 text-white rounded-full flex items-center justify-center mb-8 text-xl group-hover:border-white transition"><i class="fas fa-bell"></i></div>
+                <h3 class="text-xl font-bold text-white mb-4">Alerts</h3>
+                <p class="text-sm leading-relaxed">Automated 20-minute reminders ensure you never miss a fresh cut.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 border-t border-white/5 relative z-10 bg-black">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-black text-white mb-6 tracking-tight">Partner With Us.</h2>
+                <p class="text-mono-text leading-relaxed mb-8">Are you a barbershop owner? Join the elite network of grooming professionals on Ehla2ly.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white"><i class="fas fa-envelope"></i></div><span class="text-sm font-bold text-white">Ehla2ly@gmail.com</span></div>
+                </div>
+            </div>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-8" data-aos="fade-left">
+                <div><label class="text-xs font-bold text-mono-text tracking-widest uppercase">Your Name</label><input type="text" name="name" placeholder="John Doe" class="input-field" required></div>
+                <div><label class="text-xs font-bold text-mono-text tracking-widest uppercase">Email Address</label><input type="email" name="email" placeholder="john@example.com" class="input-field" required></div>
+                <div><label class="text-xs font-bold text-mono-text tracking-widest uppercase">Message</label><textarea name="message" rows="4" placeholder="I'm interested in listing my shop..." class="input-field resize-none" required></textarea></div>
+                <button type="submit" class="group flex items-center gap-3 text-white font-black tracking-widest text-xs uppercase hover:gap-5 transition-all">Send Message <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center relative z-10 border-t border-white/5">
+        <div class="text-2xl font-black text-white tracking-tighter mb-8">EHLA2LY.</div>
+        <div class="flex justify-center gap-8 text-xs font-bold tracking-widest text-gray-500 mb-8">
+            <a href="privacy.html" class="hover:text-white transition">PRIVACY</a>
+            <a href="#contact" class="hover:text-white transition">SUPPORT</a>
+        </div>
+        <p class="text-[10px] text-gray-700 uppercase tracking-widest">&copy; 2025 Ehla2ly Inc.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, easing: 'cubic-bezier(0.25, 1, 0.5, 1)' });</script>
+</body>
+</html>
